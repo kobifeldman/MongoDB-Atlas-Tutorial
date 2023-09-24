@@ -1,4 +1,7 @@
 # MongoDB-Atlas-Tutorial
+
+<img src="images/MongoDB_logo_square.png" width="150px" align="right">
+
 A tutorial on MongoDB using Atlas for CSCI 435
 
 ADD description on software involved on and goal / result of the tutorial.
@@ -17,8 +20,12 @@ When you are prompted to ***deploy your database***, select ***M0***, the free v
 
 This will begin to create your first cluster which may take a few minutes.
 
-> [!NOTE]
-> Optional further reading on Clusters: https://www.mongodb.com/basics/clusters
+<details><summary><b>Further Resources (optional)</b></summary>
+
+- [MongoDB Documentation](https://www.mongodb.com/docs/)
+- [Clusters](https://www.mongodb.com/basics/clusters)
+
+</details>
 
 ## Setup and Exploration
 
@@ -49,7 +56,11 @@ We can filter to find specific entries directly from this window.
 - In the filter bar, paste the following query: `{"accommodates": {$gt: 10}}`
 - This will display only airbnb listing which accommodate greater than 10 people
 
-> [!NOTE]
-> Optional further reading on databases, collections, and queries: https://www.mongodb.com/docs/manual/core/databases-and-collections/, https://www.mongodb.com/docs/compass/current/query/filter/
+<details><summary><b>Further Resources (optional)</b></summary>
+
+- [Databases and Collection](https://www.mongodb.com/docs/manual/core/databases-and-collections/)
+- [Filtering](https://www.mongodb.com/docs/compass/current/query/filter/)
+
+</details>
 
 ## Creating our First Database
