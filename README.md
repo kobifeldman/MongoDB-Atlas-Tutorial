@@ -6,6 +6,8 @@ A tutorial on MongoDB using Atlas for CSCI 435
 
 ADD description on software involved on and goal / result of the tutorial.
 
+ADD definitons like document, collection, etc?
+
 ## Installation
 
 Start by creating an account with the Atlas cloud platform at the following link. 
@@ -43,18 +45,33 @@ Navigate to the ***Database Access*** tab and click ***Add New Database User***.
 - Click ***Add User***
 
 Navigate to the ***Network Access*** tab and click ***Add IP Address***. This is a security measure to prevent non-authrorized IP addresses from connecting to our cluster.
-?????????????
 
 ### Browse our Sample Data
 
-Navigate back to the ***Database*** tab and click ***Browse collections***. This page shows all of our databases and the collections they contain. Selecting a database and then one of the collections inside of it will display all of its fields.
+Navigate back to the ***Database*** tab and click ***Browse collections***. This page shows all of our databases and the collections they contain. Selecting a database and then one of the collections inside of it will display all of its documents.
 
-We can filter to find specific entries directly from this window.
+Go to the ***sample_airbnb*** database and the ***listingsAndReviews*** collection. This collection contains mock data for airbnb listings and each one's corresponding reviews. We can filter to find specific entries directly from this window.
 
 **Try it out:**
-- Go to the ***sample_airbnb*** database and the ***listingsAndReviews*** collection
 - In the filter bar, paste the following query: `{"accommodates": {$gt: 10}}`
 - This will display only airbnb listing which accommodate greater than 10 people
+
+**A more complicated query:**
+- Try using the following query: 
+```
+{
+  "property_type": "House",
+  "bedrooms": { "$gte": 4 },
+  "amenities": {
+    "$all": [
+      "Pool",
+      "Air conditioning"
+    ]
+  },
+  "price": { "$gte": 50, "$lte": 500 }
+}
+```
+- This one filters for properties which are houses, have atleast 4 bedrooms, contain all of the listed amenities, and have a price between 50 and 500 dollars.
 
 <details><summary><b>Further Resources (optional)</b></summary>
 
@@ -64,3 +81,13 @@ We can filter to find specific entries directly from this window.
 </details>
 
 ## Creating our First Database
+
+
+
+## Sources
+
+Resources used to design this tutorial:
+- [MongoDB Documentation](https://www.mongodb.com/docs/)
+- [Official MongoDB Atlas Tutorial](https://www.mongodb.com/basics/mongodb-atlas-tutorial)
+- [Intro to MongoDB Atlas JumpStart Video](https://www.youtube.com/watch?v=xrc7dIO_tXk)
+- [Getting started with MongoDB Atlas Video](https://www.youtube.com/watch?v=bBA9rUdqmgY)
