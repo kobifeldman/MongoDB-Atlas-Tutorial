@@ -109,8 +109,9 @@ We now have our Software Engineering class listed as a document in our course co
 
 Share your MongoDB Atlas project with Professor Poshyvanyk and Alejandro so they can check off that you followed the tutorial.
 
-1. Navigate to the ***Invite to Project*** button in the top right.
 <img src="images/invite_1.PNG" width="50" align="right">
+
+1. Navigate to the ***Invite to Project*** button in the top right.
 
 2. Enter their emails and for access permissions, make sure to select ***Read only*** and ***Project data access read only***.
 ![](images/invite.PNG)
