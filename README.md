@@ -107,69 +107,23 @@ We now have our Software Engineering class listed as a document in our course co
 
 </details>
 
-## Connect MongoDB Atlas with Python
+## Submission
 
-### Setup External DB Access
+Share your MongoDB Atlas project with Professor Poshyvanyk and Alejandro so they can check off that you followed the tutorial.
 
-We will now configure our database so that we can access it externally.
+1. Navigate to the ***Invite to Project*** button in the top right.
+<img src="images/invite_1.PNG" width="50" align="right">
 
-##### 1. Navigate to the ***Database Access*** tab and click ***Add New Database User***.
-- Create a username and password
-- Under Database User Priviledges > Built-in Role, select ***Read and write any to any database***
-- Click ***Add User***
+2. Enter their emails and for access permissions, make sure to select ***Read only*** and ***Project data access read only***.
+![](images/invite.PNG)
 
-##### 2. Navigate to the ***Network Access*** tab and click ***Add IP Address***. This is a security measure to prevent non-authrorized IP addresses from connecting to our cluster.
-- Click ***Add current IP address*** and then ***Confirm***.
+<details><summary><b>Further Resources (optional)</b></summary>
 
-##### 3. Navigate to the ***Database*** tab and click ***Connect***
-- Select ***Drivers***
-
-### Setup Python
-
-Create a directory for this project anywhere on your computer.
-
-In the directory, create a virtual environment for the project and activate it:
-```
-python -m venv env
-source env/bin/activate
-```
-
-Install PyMongo:
-```
-pip install pymongo
-```
-
-Create a python file in this directory. Also, you can use any basic text editor for this tutorial.
-
-<details><summary><b>VSCode Extension (optional)</b></summary>
-
-If you are using VSCode, there is a really nice extension for working with MongoDB. Installing this is entirely optional. We won't go over it in this tutorial but it is worth checking out if you are interested in diving deeper into using MongoDB.
-
-> https://code.visualstudio.com/docs/azure/mongodb
+Here are some resources for working on your MongoDB Atlas cluster with Python for anyone interested in diving deeper into MongoDB.
+- [Working with MongoDB and Python](https://www.mongodb.com/languages/python)
+- [VSCode Extension](https://code.visualstudio.com/docs/azure/mongodb)
 
 </details>
-
-## Working with the Database in Python
-
-Insert the following code to connect to the Atlas cluster we created above. Make sure to replace replace <user> and <password> with the username and password you created earlier:
-```
-import pymongo
- 
-# MongoDB Atlas URL
-CONNECTION_STRING = "mongodb+srv://user:pass@cluster.mongodb.net/myFirstDatabase"
-
-# Create a connection using MongoClient
-cluster = pymongo.MongoClient(CONNECTION_STRING)
-```
-
-Create a new database and collection in our cluster:
-```
-# Create a new database
-database =  cluster["campus"]
-
-# Create a new collection
-collection = database["building"]
-```
 
 ## Sources
 
