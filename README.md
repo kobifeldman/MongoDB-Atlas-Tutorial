@@ -33,18 +33,7 @@ This will begin to create your first cluster which may take a few minutes.
 
 ### Load Sample Data
 
-Navigate to the ***Database*** tab and click ***Load sample data***. This will take a few minutes, so you can move to the next step while this is happening.
-
-### Setup External DB Access
-
-We will now configure our database so that we can access it externally.
-
-Navigate to the ***Database Access*** tab and click ***Add New Database User***.
-- Create a username and password
-- Under Database User Priviledges > Built-in Role, select ***Read and write any to any database***
-- Click ***Add User***
-
-Navigate to the ***Network Access*** tab and click ***Add IP Address***. This is a security measure to prevent non-authrorized IP addresses from connecting to our cluster.
+Navigate to the ***Database*** tab and click ***Load sample data***. This will take a few minutes.
 
 ### Browse our Sample Data
 
@@ -80,9 +69,69 @@ Go to the ***sample_airbnb*** database and the ***listingsAndReviews*** collecti
 
 </details>
 
-## Creating our First Database
+## Connect MongoDB Atlas with Python
 
+### Setup External DB Access
 
+We will now configure our database so that we can access it externally.
+
+##### 1. Navigate to the ***Database Access*** tab and click ***Add New Database User***.
+- Create a username and password
+- Under Database User Priviledges > Built-in Role, select ***Read and write any to any database***
+- Click ***Add User***
+
+##### 2. Navigate to the ***Network Access*** tab and click ***Add IP Address***. This is a security measure to prevent non-authrorized IP addresses from connecting to our cluster.
+- Click ***Add current IP address*** and then ***Confirm***.
+
+##### 3. Navigate to the ***Database*** tab and click ***Connect***
+- Select ***Drivers***
+
+### Setup Python
+
+Create a directory for this project anywhere on your computer.
+
+In the directory, create a virtual environment for the project and activate it:
+```
+python -m venv env
+source env/bin/activate
+```
+
+Install PyMongo:
+```
+pip install pymongo
+```
+
+Create a python file in this directory. Also, you can use any basic text editor for this tutorial.
+
+<details><summary><b>VSCode Extension (optional)</b></summary>
+
+If you are using VSCode, there is a really nice extension for working with MongoDB. Installing this is entirely optional. We won't go over it in this tutorial but it is worth checking out if you are interested in diving deeper into using MongoDB.
+
+> https://code.visualstudio.com/docs/azure/mongodb
+
+</details>
+
+## Working with the Database in Python
+
+Insert the following code to connect to the Atlas cluster we created above. Make sure to replace replace <user> and <password> with the username and password you created earlier:
+```
+import pymongo
+ 
+# MongoDB Atlas URL
+CONNECTION_STRING = "mongodb+srv://user:pass@cluster.mongodb.net/myFirstDatabase"
+
+# Create a connection using MongoClient
+cluster = pymongo.MongoClient(CONNECTION_STRING)
+```
+
+Create a new database and collection in our cluster:
+```
+# Create a new database
+database =  cluster["campus"]
+
+# Create a new collection
+collection = database["building"]
+```
 
 ## Sources
 
