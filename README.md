@@ -69,6 +69,44 @@ Go to the ***sample_airbnb*** database and the ***listingsAndReviews*** collecti
 
 </details>
 
+## Creating New Data
+
+We can also create new data directly in the Atlas web page.
+
+#### 1. Create a new database and collection
+- Click ***Create Database*** above our current list of databases.
+- Enter `school` for ***Database name*** and `course` for ***Collection name***.
+- Click ***Create***.
+
+#### 2. Add data
+- Make sure our new course collection is selected.
+- Click ***Insert Document*** on the right side of the page.
+- Select the view option with brackets so we can type our data in as JSON.
+![](images/insert_doc.PNG)
+- Paste the following fields in after the id field:
+  ```
+  ,
+  "name": "Software Engineering",
+  "CRN": 12335,
+  "days": ["M", "W"]
+  ```
+  ![](images/insert_data.PNG)
+- Come up with one more field that would make sense to include in a document for a course and add it.
+- Click ***Insert***
+
+We now have our Software Engineering class listed as a document in our course collection. Go ahead and add all of the other courses you are taking this semester following the same procedure. Note that you can add multiple documents at once by surrounding them with `[]` to insert an array of documents.
+
+#### 3. Try making your own collection
+- Hover over the ***school*** database in the list of databases on the left and click the plus sign.
+- Come up with 1 new collection that would make sense to include in the school database and add it. Some examples: building, student, instructor, etc.
+- Come up with some fields that would make sense to include in this collection and insert 3 documents with these fields.
+
+<details><summary><b>Further Resources (optional)</b></summary>
+
+- [Handling Documents in Atlas](https://www.mongodb.com/docs/atlas/atlas-ui/documents/)
+
+</details>
+
 ## Connect MongoDB Atlas with Python
 
 ### Setup External DB Access
