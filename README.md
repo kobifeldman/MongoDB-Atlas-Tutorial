@@ -1,22 +1,20 @@
 <img src="images/MongoDB_logo_square.png" width="150px" align="right">
 
-# MongoDB-Atlas-Tutorial
+# MongoDB Atlas Tutorial
 
-A tutorial on MongoDB using Atlas for CSCI 435
+This is a tutorial for CSCI 435 on using MongoDB with Atlas. MongoDB is a NoSQL, document database. Atlas is MongoDB's cloud platform which can be used to easily deploy and manage MongoDB databases.
 
-ADD description on software involved on and goal / result of the tutorial.
-
-ADD definitons like document, collection, etc?
+In this tutorial, you will be walked through the process of setting up MongoDB Atlas, querying data, and creating your own data. At the end, you will have created a database for our school. You will have created two collections in this database and a couple document entries for each.
 
 ## Installation
 
 Start by creating an account with the Atlas cloud platform at the following link. 
 
+> https://www.mongodb.com/cloud/atlas/register
+
 After verifying your email, you will be prompted with a few questions to personalize your account. Most of these settings are not important and can be left as default except for the pricing model.
 
 When you are prompted to ***deploy your database***, select ***M0***, the free version which is designed to learn and explore what MongoDB has to offer.
-
-> https://www.mongodb.com/cloud/atlas/register
 
 ![Atlas Setup](images/deploy_db.png)
 
@@ -47,19 +45,19 @@ Go to the ***sample_airbnb*** database and the ***listingsAndReviews*** collecti
 
 **A more complicated query:**
 - Try using the following query: 
-```
-{
-  "property_type": "House",
-  "bedrooms": { "$gte": 4 },
-  "amenities": {
-    "$all": [
-      "Pool",
-      "Air conditioning"
-    ]
-  },
-  "price": { "$gte": 50, "$lte": 500 }
-}
-```
+  ```
+  {
+    "property_type": "House",
+    "bedrooms": { "$gte": 4 },
+    "amenities": {
+      "$all": [
+        "Pool",
+        "Air conditioning"
+      ]
+    },
+    "price": { "$gte": 50, "$lte": 500 }
+  }
+  ```
 - This one filters for properties which are houses, have atleast 4 bedrooms, contain all of the listed amenities, and have a price between 50 and 500 dollars.
 
 <details><summary><b>Further Resources (optional)</b></summary>
@@ -116,6 +114,8 @@ Share your MongoDB Atlas project with Professor Poshyvanyk and Alejandro so they
 
 2. Enter their emails and for access permissions, make sure to select ***Read only*** and ***Project data access read only***.
 ![](images/invite.PNG)
+
+3. Click ***Invite to Project***.
 
 <details><summary><b>Further Resources (optional)</b></summary>
 
